@@ -11,13 +11,14 @@ namespace loophp\phptree\Node;
 
 /**
  * Interface ValueNodeInterface.
+ * @template TValue
  */
 interface ValueNodeInterface extends NaryNodeInterface
 {
     /**
      * Get the value property.
      *
-     * @return mixed|string|null
+     * @return TValue
      *   The value property
      */
     public function getValue();
