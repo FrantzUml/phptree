@@ -11,12 +11,20 @@ namespace loophp\phptree\Node;
 
 use loophp\phptree\Traverser\TraverserInterface;
 
+/**
+ * @template TValue
+ * @implementents ValueNodeInterface<TValue>
+ */
 class ValueNode extends NaryNode implements ValueNodeInterface
 {
-    private mixed $value;
+    /** @var TValue */
+    private $value;
 
+    /**
+     * @param TValue $value
+     */
     public function __construct(
-        mixed $value,
+        $value,
         int $capacity = 0,
         ?TraverserInterface $traverser = null,
         ?NodeInterface $parent = null
